@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGIS Registration</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      min-height:100vh;
+    }
+
+    /* HEADER */
+
+    header{
+      background:linear-gradient(to right,#111827,#1e293b);
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .navbar{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:bold;
+      color:#facc15;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#facc15;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:300px;
+      background:
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1600&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:50px;
+      color:#facc15;
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:18px;
+      color:#e2e8f0;
+    }
+
+    /* FORM */
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:50px auto;
+    }
+
+    .form-box{
+      background:#1e293b;
+      padding:40px;
+      border-radius:18px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .form-box h2{
+      color:#facc15;
+      margin-bottom:25px;
+      text-align:center;
+      font-size:35px;
+    }
+
+    .info-box{
+      background:#111827;
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:30px;
+    }
+
+    .info-box ul{
+      padding-left:20px;
+    }
+
+    .info-box li{
+      margin-bottom:10px;
+      color:#cbd5e1;
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+      color:#f8fafc;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      font-size:15px;
+      background:#f8fafc;
+    }
+
+    .player-box{
+      background:#111827;
+      padding:25px;
+      border-radius:15px;
+      margin-bottom:25px;
+    }
+
+    .player-box h3{
+      color:#facc15;
+      margin-bottom:18px;
+    }
+
+    button{
+      width:100%;
+      padding:16px;
+      background:#facc15;
+      color:black;
+      border:none;
+      border-radius:12px;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#eab308;
+      transform:scale(1.02);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111827;
+      padding:35px 20px;
+      text-align:center;
+      margin-top:50px;
+    }
+
+    footer h2{
+      color:#facc15;
+      margin-bottom:10px;
+    }
+
+    footer p{
+      color:#cbd5e1;
+      margin-bottom:10px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:15px;
+      }
+
+      nav a{
+        display:inline-block;
+        margin:8px;
+      }
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .form-box{
+        padding:25px;
+      }
+
+      .form-box h2{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="navbar">
+
+    <div class="logo">
+      BGMI ESPORTS
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#tournaments">Tournaments</a>
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <h1>BGIS Registration</h1>
+
+    <p>
+      Register your squad for India's biggest BGMI esports tournament.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FORM -->
+
+<div class="container">
+
+  <div class="form-box">
+
+    <h2>Team Registration Form</h2>
+
+    <div class="info-box">
+
+      <ul>
+        <li>All team members must provide correct BGMI ID.</li>
+        <li>Only valid Indian BGMI accounts are allowed.</li>
+        <li>Each squad must contain 5 players.</li>
+        <li>Incorrect information may lead to disqualification.</li>
+      </ul>
+
+    </div>
+
+    <form id="bgisForm" action="register.php" method="POST">
+
+      <!-- TEAM -->
+
+      <div class="form-group">
+
+        <label>Team Name</label>
+
+        <input 
+          type="text"
+          name="team_name"
+          placeholder="Enter Team Name"
+          required
+        >
+
+      </div>
+
+      <!-- PLAYER 1 -->
+
+      <div class="player-box">
+
+        <h3>Player 1</h3>
+
+        <div class="form-group">
+
+          <label>In-Game Name</label>
+
+          <input
+            type="text"
+            name="player1_name"
+            placeholder="Enter Player Name"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>BGMI ID</label>
+
+          <input
+            type="text"
+            name="player1_id"
+            placeholder="Enter BGMI ID"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PLAYER 2 -->
+
+      <div class="player-box">
+
+        <h3>Player 2</h3>
+
+        <div class="form-group">
+
+          <label>In-Game Name</label>
+
+          <input
+            type="text"
+            name="player2_name"
+            placeholder="Enter Player Name"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>BGMI ID</label>
+
+          <input
+            type="text"
+            name="player2_id"
+            placeholder="Enter BGMI ID"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PLAYER 3 -->
+
+      <div class="player-box">
+
+        <h3>Player 3</h3>
+
+        <div class="form-group">
+
+          <label>In-Game Name</label>
+
+          <input
+            type="text"
+            name="player3_name"
+            placeholder="Enter Player Name"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>BGMI ID</label>
+
+          <input
+            type="text"
+            name="player3_id"
+            placeholder="Enter BGMI ID"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PLAYER 4 -->
+
+      <div class="player-box">
+
+        <h3>Player 4</h3>
+
+        <div class="form-group">
+
+          <label>In-Game Name</label>
+
+          <input
+            type="text"
+            name="player4_name"
+            placeholder="Enter Player Name"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>BGMI ID</label>
+
+          <input
+            type="text"
+            name="player4_id"
+            placeholder="Enter BGMI ID"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PLAYER 5 -->
+
+      <div class="player-box">
+
+        <h3>Player 5</h3>
+
+        <div class="form-group">
+
+          <label>In-Game Name</label>
+
+          <input
+            type="text"
+            name="player5_name"
+            placeholder="Enter Player Name"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>BGMI ID</label>
+
+          <input
+            type="text"
+            name="player5_id"
+            placeholder="Enter BGMI ID"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <!-- SUBMIT -->
+
+      <button type="submit">
+        Submit Registration
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>BGMI Esports Tournament</h2>
+
+  <p>
+    Official BGIS Registration Portal
+  </p>
+
+  <p>
+    © 2026 BGMI Esports | All Rights Reserved
+  </p>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+document.getElementById("bgisForm").addEventListener("submit", function(e){
+
+  let inputs = document.querySelectorAll("input");
+
+  for(let i = 0; i < inputs.length; i++){
+
+    if(inputs[i].value.trim() === ""){
+
+      alert("Please fill all fields correctly");
+      e.preventDefault();
+      return;
+
+    }
+
+  }
+
+  alert("Registration Confirmed Successfully!");
+
+});
+
+</script>
+
+</body>
+</html>
